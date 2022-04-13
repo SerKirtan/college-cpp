@@ -2,9 +2,10 @@
 using namespace std;
 class Log{
     public:
-        const int logWarning=0;
-        const int logError=1;
-        const int logInfo=2;
+    enum Level
+        {
+            logError = 0 ,logWarn,logInfo
+        };
 
     private:
         int m_logLevel=logInfo;
@@ -21,7 +22,7 @@ class Log{
     }
     int Warn(const char* msg)
     {
-        if(m_logLevel>=logWarning)
+        if(m_logLevel>=logWarn)
         cout<< "[WARNING]: "<<msg<<endl;
     }
     int Error(const char* msg)
