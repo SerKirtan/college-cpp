@@ -4,7 +4,7 @@ class Log{
     public:
     enum Level
         {
-            logError = 0 ,logWarn,logInfo
+            logWarn = 0 ,logError,logInfo
         };
 
     private:
@@ -12,7 +12,7 @@ class Log{
     public:
         int setLevel()
         {
-            cout<<"Set your log to 0]Warns, 1]Warns & Errors Warns, 2]Errors & Info [input : 0,1,2]"<<endl;
+            cout<<"Set your log to 0]Warns, 1] Warns & Errors 2]Warns & Errors Warns[input : 0,1,2]"<<endl;
             cin>>m_logLevel;
         }
     int Info(const char* msg)
