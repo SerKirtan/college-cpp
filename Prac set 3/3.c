@@ -1,4 +1,4 @@
-//Set smaller number to 0 using call by reference
+//Set smaller number to 0 using return by reference
 #include<iostream>
 using namespace std;
 int zerosmaller(int &a, int &b)
