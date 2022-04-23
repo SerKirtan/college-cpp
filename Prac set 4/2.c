@@ -6,7 +6,6 @@ class item{
         int code;
         float cost;
         int qty;
-        float total_price;
     public:
         int input()
         {
@@ -19,21 +18,30 @@ class item{
         }
         int print()
         {
-            cout<<"--------------------"<<endl;
-            cout<<"Item code  : "<<code<<endl;
-            cout<<"Item cost  : "<<cost<<endl;
-            cout<<"Quantity   : "<<qty<<endl;
-            cout<<"Total Price: "<<qty*cost<<endl;
+            cout<<"--------------------------"<<endl;
+            cout<<"Item code        : "<<code<<endl;
+            cout<<"Item cost        : "<<cost<<endl;
+            cout<<"Quantity         : "<<qty<<endl;
+            cout<<"Total Item Price : "<<qty*cost<<endl;
+        }
+        inline int totalP(float &sum)
+        {
+            sum+=qty*cost;
         }
 };
 int main()
 {
     int n,it=0;
+    float total_price=0;
     cout<<"How many items are you buying : ";
     cin>>n;
     class item i[n];
     for(;it<n;it++)
         i[it].input();
     for(it=0;it<n;it++)
+    {
         i[it].print();
+        i[it].totalP(total_price);
+    }
+    cout<<"Your total bill is of "<<total_price<<" Rs";
 }
