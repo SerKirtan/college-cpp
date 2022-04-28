@@ -1,64 +1,70 @@
-//class book : bookname, authorname, rate, qty 
 #include<iostream>
 #include<string>
 #include<algorithm>
-using namespace std;
-static float max=0.0;
-static int count=0;
-class book{
+class book
+{
     private:
-        string bname;
-        string aname;
-        float rate;
+        std::string book_name;
+        std::string authour_name;
+        float rate,item_total;
         int qty;
     public:
-    float item_total;
-    book(){
-        cout<<"Object created\n";
-    }
-    ~book(){
-        cout<<"Object destroyed\n";
-    }
-        int input(){
+        book()
+        {
+            std::cout<<"Object created\n";
+        }
+        ~book()
+        {
+            std::cout<<"Object destroyed\n";
+        }
+        void input()
+        {
             fflush(stdin);
-            cout<<"------------------------------"<<endl;
-            cout<<"Enter Book name : ";
-            getline(cin,bname);
-            cout<<"Enter Author name  : ";
-            getline(cin,aname);
-            cout<<"Enter rate and quantity  : ";
-            cin>>rate>>qty;
+            std::cout<<"------------------------------"<<std::endl;
+            std::cout<<"Enter Book name : ";
+            getline(std::cin,book_name);
+            std::cout<<"Enter Author name  : ";
+            getline(std::cin,authour_name);
+            std::cout<<"Enter rate and quantity  : ";
+            std::cin>>rate>>qty;
             item_total=rate*qty;
         }
-        int print(){
-            fflush(stdin);
-            cout<<"--------------------------"<<endl;
-            cout<<"Book name        : "<<bname<<endl;
-            cout<<"Author name      : "<<aname<<endl;
-            cout<<"Book price       : "<<rate<<endl;
-            cout<<"Quantity         : "<<qty<<endl;
-            cout<<"Total Item Price : "<<rate*qty<<endl;
+        void print()
+        {
+            std::cout<<"--------------------------"<<std::endl;
+            std::cout<<"Book name        : "<<book_name<<std::endl;
+            std::cout<<"Author name      : "<<authour_name<<std::endl;
+            std::cout<<"Book price       : "<<rate<<std::endl;
+            std::cout<<"Quantity         : "<<qty<<std::endl;
+            std::cout<<"Total Item Price : "<<rate*qty<<std::endl;
         }
-        inline int totalP(float &sum){
+        inline void totalP(float &sum)
+        {
             sum+=qty*rate;
         }
-};
-bool comp(const book& lhs, const book& rhs){
+        static bool comp(const book& lhs, const book& rhs)
+        {
             return lhs.item_total > rhs.item_total;
         }
+};
 int main()
 {
-    int n,it=0;
+    int size;
     float total_price=0;
-    cout<<"How many books are you buying : ";
-    cin>>n;
-    class book b[n];
-    for(;it<n;it++)
+    std::cout<<"How many books are you buying : ";
+    std::cin>>size;
+    
+    class book b[size];
+    
+    for(int it=0;it<size;it++)
         b[it].input();
-    for(it=0;it<n;it++)
-        b[it].totalP(total_price);
-    sort(b, b+n, comp);
-    for(it=0;it<n;it++)
+    
+    std::sort(b, b+size, book::comp);
+    
+    for(int it=0;it<size;it++)
+    {
         b[it].print();
-    cout<<"Your total bill is of "<<total_price<<" Rs\n";
+        b[it].totalP(total_price);
+    }
+    std::cout<<"Your total bill is of "<<total_price<<" Rs\n";
 }
