@@ -1,93 +1,82 @@
-//Player,name, Team name, Batting average of 5 players
+//Player,name, Team name, Batting average of 10 players
 #include<iostream>
 #include<string>
-using namespace std;
-class Team{
-    private:
-        class Player{
-            public:
-                string name;
-                float bAvg;
-    }p[5];
-    public:
-        string Tname;
-        inline void teamInput(){
-            getline(cin,Tname);
-        }
-        void input(){
-            for(int j=0;j<5;j++){
-                fflush(stdin);
-                cout<<"Enter player-"<<j+1<<" name and batting average"<<endl;
-                getline(cin,p[j].name);
-                cin>>p[j].bAvg;
-            }
-        }
-        void print(){
-            for(int j=0;j<5;j++){
-                cout<<"Player-"<<j+1<<" details\n";
-                cout<<"Name : "<<p[j].name<<"\n Batting average : "<<p[j].bAvg<<endl;
-            }
-        }
-        void sort(){
-            for(int j=0;j<5;j++){
-                for(int k=j+1;k<5;k++)
-                {
-                    if(p[j].bAvg<p[k].bAvg){
-                        float temp=p[j].bAvg;
-                        p[j].bAvg=p[k].bAvg;
-                        p[k].bAvg=temp;
-                        string tmp=p[j].name;
-                        p[j].name=p[k].name;
-                        p[k].name=tmp;
-                    }
-                }
-            }
-        }
-        
-        inline int printMax(float &mm,string mname){
-            cout<<mname<<"'s Batting average is "<<mm<<endl;
-        }
-        int sortBYmax(){
-            float &max=p[0].bAvg;
-            string mname;
-            for(int i=0;i<5;i++){
-            for(int j=0;j<5;j++){
-                if(p[j].bAvg>max){
-                    max=p[j].bAvg;
-                    mname=p[j].name;
-                }
-            }
-            printMax(max,mname);
-            max=-1;
-        }
-        }
-};
-int main(){
-    int n,i,j;
-    cout<<"Enter number of teams : ";
-    cin>>n;
-    class Team t[n];
-    for(i=0;i<n;i++){
-        cout<<"Enter team-"<<i+1<<" name\n";
+class Player
+{
+private:
+    std::string player_name;
+    std::string team_name;
+    float batting_avg;
+public:
+    void readData()
+    {
         fflush(stdin);
-        t[i].teamInput();
+        std::cout<<"Enter player name : ";
+        getline(std::cin,player_name);
+        std::cout<<"Enter team name   : ";
+        getline(std::cin,team_name);
+        std::cout<<"Batting average   : ";
+        std::cin>>batting_avg;
     }
-    for(i=0;i<n;i++){
-        cout<<"--------------------\nTeam-"<<i+1<<" details \n";
-            t[i].input();
+    inline void displayData()
+    {
+        std::cout<<team_name<<"\t\t"<<player_name<<"\t"<<batting_avg<<"\n";
     }
-    for(i=0;i<n;i++){
-        cout<<"--------------------\nTeam-"<<i+1<<" details \n";
-        t[i].print();
+    void sort(Player p[])
+    {
+        Player temp;
+        for(int j=0;j<5;j++)
+        {
+            for(int k=j+1;k<5;k++)
+            {
+                if(p[j].batting_avg<p[k].batting_avg)
+                {
+                    temp=p[j];
+                    p[j]=p[k];
+                    p[k]=temp;
+                }
+            }
+        }
     }
-    for(i=0;i<n;i++)
-        t[i].sort();
-    for(i=0;i<n;i++){
-        cout<<"--------------------\n Sorted Team-"<<i+1<<" details \n";
-        t[i].print();
+    void teamWiseSort(Player p[])
+    {
+        Player temp;
+        for(int j=0;j<4;j++)
+        {
+            for(int k=j+1;k<5;k++)
+            {
+                if(!(p[j].team_name.compare(p[k].team_name)))
+                {
+                    temp=p[j+1];
+                    p[j+1]=p[k];
+                    p[k]=temp;
+                }
+            }
+        }
     }
-    cout<<"All players sorted : \n";
-    for(i=0;i<n;i++){
-        t[i].sortBYmax();
+};
+int main()
+{
+    int size=5;
+    Player p[size];
+
+    for(int i=0;i<size;i++)
+    {
+        std::cout<<"Enter player-"<<i+1<<" data\n";
+        p[i].readData();
     }
+    
+    for(int i=0;i<size;i++)
+        p[i].sort(p);
+
+    std::cout<<"Team name\t Player name\t Batting average\n";
+    for(int i=0;i<size;i++)
+        p[i].displayData();
+
+    for(int i=0;i<size;i++)
+        p[i].teamWiseSort(p);
+    
+    std::cout<<"\n\nTeam name\t Player name\t Batting average\n";
+    for(int i=0;i<size;i++)
+        p[i].displayData();
 }
