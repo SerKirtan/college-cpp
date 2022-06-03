@@ -13,6 +13,7 @@ class Player
         private:
             int runs;
         public:
+            Player() : runs(0) {}
             inline void setRuns(int &refTotalRuns)
             {
                 std::cin>>runs;
