@@ -8,12 +8,13 @@ class Player
         int age,highest,lowest,no_of_tests;
         float average;
     public:
+        Player() : name("Unknown"), age(0), highest(0), lowest(0), no_of_tests(0), average(0) {}
     class Runs
     {
         private:
             int runs;
         public:
-            Player() : runs(0) {}
+            Runs() : runs(0) {}
             inline void setRuns(int &refTotalRuns)
             {
                 std::cin>>runs;
