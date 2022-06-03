@@ -3,8 +3,9 @@
 using namespace std;
 class time{
     private:
-        int h=0,m,s,sec;
+        int h,m,s,sec;
     public:
+        time() : h(0), m(0), s(0), sec(0) {}
         inline int read(){
             cin>>sec;
         }
@@ -17,7 +18,7 @@ class time{
             }
         }
         int print(){
-            cout<<"------------------------"<<endl;
+            cout<<"----------------------------------"<<endl;
             cout<<"Entered Time : "<<sec<<endl;
             cout<<"Conversion [hours:mins:seconds] : "<<h<<":"<<m<<":"<<s<<endl;
         }
