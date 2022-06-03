@@ -1,4 +1,4 @@
-//Real and imaginary :- Add, Sub & Mult
+//Real and imaginary :- Add , Sub , Mult & Div
 #include<iostream>
 class Complex
 {
