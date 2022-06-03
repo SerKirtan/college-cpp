@@ -1,4 +1,4 @@
-//claa book : bookname, authorname, rate, qty 
+//class book : bookname, authorname, rate, qty 
 #include<iostream>
 #include<string>
 using namespace std;
@@ -9,6 +9,7 @@ class book{
         float rate;
         int qty;
     public:
+    book() : bname("Unknown"), aname("Unknown"), rate(0), qty(0) {}
         int input()
         {
             fflush(stdin);
