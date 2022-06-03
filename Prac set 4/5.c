@@ -7,10 +7,10 @@ class Class{
     class Student{
         private:
             string name;
-            int rollno=1,nos;
+            int rollno,nos;
             float marks[6],percentage;
-            
         public:
+            Student() : name("Unknown"), rollno(0), nos(0), percentage(0) {}
             void read(int rn){
                 percentage=0;
                 fflush(stdin);
