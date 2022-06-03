@@ -8,9 +8,11 @@ class Class{
         private:
             string name;
             int rollno=1,nos;
-            float marks[6];
+            float marks[6],percentage;
+            
         public:
             void read(int rn){
+                percentage=0;
                 fflush(stdin);
                 rollno=rn+1;
                 getline(cin,name);
@@ -23,7 +25,11 @@ class Class{
                 cout<<"-----------------"<<endl<<"Name : "<<name<<endl;
                 cout<<"Roll No : "<<rollno<<endl;
                 for(int it = 0;it<6;it++)
+                {
                     cout<<"Subject-"<<it+1<<" marks : "<<marks[it]<<endl;
+                    percentage+=marks[it];
+                }
+                cout<<"Percentage="<<percentage/6<<endl;
             }
     }s[100];
 };
