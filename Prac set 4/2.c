@@ -7,6 +7,7 @@ class item{
         float cost;
         int qty;
     public:
+        item() : code(0), cost(0), qty(0) {}
         int input()
         {
             cout<<"Enter Item code : ";
