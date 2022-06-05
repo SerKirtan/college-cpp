@@ -5,6 +5,7 @@ class Date
 private:
     int dd , mm , yy ;
 public:
+    Date() : dd(1) , mm(1) , yy(1) {}
     inline void getDate()
     {
         std::cout << "Enter Day , Month and Year : ";
