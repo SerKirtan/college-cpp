@@ -5,10 +5,11 @@ class Book
 {
     private:
         std::string book_name;
-        std::string authour_name;
+        std::string author_name;
         float rate,item_total;
         int qty;
     public:
+        Book() : book_name("Unknown") , author_name("Unknown") , rate(0) , item_total (0) , qty(0) {}
         void input()
         {
             fflush(stdin);
@@ -16,7 +17,7 @@ class Book
             std::cout<<"Enter Book name : ";
             getline(std::cin,book_name);
             std::cout<<"Enter Author name  : ";
-            getline(std::cin,authour_name);
+            getline(std::cin,author_name);
             std::cout<<"Enter rate and quantity  : ";
             std::cin>>rate>>qty;
             item_total=rate*qty;
@@ -25,7 +26,7 @@ class Book
         {
             std::cout<<"--------------------------"<<std::endl;
             std::cout<<"Book name        : "<<book_name<<std::endl;
-            std::cout<<"Author name      : "<<authour_name<<std::endl;
+            std::cout<<"Author name      : "<<author_name<<std::endl;
             std::cout<<"Book price       : "<<rate<<std::endl;
             std::cout<<"Quantity         : "<<qty<<std::endl;
             std::cout<<"Total Item Price : "<<item_total<<std::endl;
