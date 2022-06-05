@@ -8,6 +8,7 @@ private:
     std::string team_name;
     float batting_avg;
 public:
+    Player() : player_name("Unknown") , team_name("Unknown") , batting_avg(0) {}
     void readData()
     {
         fflush(stdin);
