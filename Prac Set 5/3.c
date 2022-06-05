@@ -7,6 +7,7 @@ private:
     std::string membersTitle, author;
     int year_of_publication, no_of_copies;
 public:
+    Catalog() : membersTitle("Unknown") , author("Unknown") , year_of_publication(0) , no_of_copies(0) {}
     void getData()
     {
         fflush(stdin);
