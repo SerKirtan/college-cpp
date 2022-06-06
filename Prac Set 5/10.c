@@ -33,8 +33,10 @@ int main()
 
     std::cout << "All entered strings :- \n";
     for(int i = 0 ; i < size ; i++)
+    {
+        std::cout << i+1 << "]";
         s[i].displayData();
-
+    }
     std::cout << "Which two Strings you want to concatenate : ";
     std::cin >> string1 >> string2 ;
     --string1;
