@@ -48,9 +48,9 @@ public:
             {
                 if(!(p[j].team_name.compare(p[k].team_name)))
                 {
-                    temp=p[j+1];
-                    p[j+1]=p[k];
-                    p[k]=temp;
+                        temp=p[j+1];
+                        p[j+1]=p[k];
+                        p[k]=temp;
                 }
             }
         }
