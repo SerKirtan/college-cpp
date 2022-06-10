@@ -39,12 +39,12 @@ public:
             }
         }
     }
-    void teamWiseSort(Player p[])
+    void teamWiseSort(Player p[], int size)
     {
         Player temp;
-        for(int j=0;j<4;j++)
+        for(int j=0;j<size-1;j++)
         {
-            for(int k=j+1;k<5;k++)
+            for(int k=j+1;k<size;k++)
             {
                 if(!(p[j].team_name.compare(p[k].team_name)))
                 {
@@ -58,7 +58,9 @@ public:
 };
 int main()
 {
-    int size=5;
+    int size;
+    std::cout << "Enter number of players : ";
+    std::cin >> size;
     Player p[size];
 
     for(int i=0;i<size;i++)
@@ -75,7 +77,7 @@ int main()
         p[i].displayData();
 
     for(int i=0;i<size;i++)
-        p[i].teamWiseSort(p);
+        p[i].teamWiseSort(p , size );
     
     std::cout<<"\n\nTeam name\t Player name\t Batting average\n";
     for(int i=0;i<size;i++)
