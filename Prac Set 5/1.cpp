@@ -23,12 +23,12 @@ public:
     {
         std::cout<<team_name<<"\t\t"<<player_name<<"\t"<<batting_avg<<"\n";
     }
-    void sort(Player p[])
+    void sort(Player p[], int size)
     {
         Player temp;
-        for(int j=0;j<5;j++)
+        for(int j=0;j<size-1;j++)
         {
-            for(int k=j+1;k<5;k++)
+            for(int k=j+1;k<size;k++)
             {
                 if(p[j].batting_avg<p[k].batting_avg)
                 {
