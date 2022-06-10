@@ -70,7 +70,7 @@ int main()
     }
     
     for(int i=0;i<size;i++)
-        p[i].sort(p);
+        p[i].sort(p , size);
 
     std::cout<<"Team name\t Player name\t Batting average\n";
     for(int i=0;i<size;i++)
