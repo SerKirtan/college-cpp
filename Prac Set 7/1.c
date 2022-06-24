@@ -10,10 +10,7 @@ private:
     double ton;
 public:
     tons() : ton(0) {} //deafault constructor
-    tons(double x)
-    {
-        ton=x;
-    }
+    tons(double x) : ton(x) {}
     inline void input()
     {
         std::cout << "Enter ton : ";
