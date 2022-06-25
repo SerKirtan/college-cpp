@@ -1,0 +1,4 @@
+QUES :- 7. Define Inheritance. Explain public, private and protected
+inheritance with example.
+
+ANS :- https://www.programiz.com/cpp-programming/public-protected-private-inheritance
