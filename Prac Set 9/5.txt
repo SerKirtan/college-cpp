@@ -1,0 +1,3 @@
+5. What is pointer to void?
+
+Ans - > https://www.geeksforgeeks.org/void-pointer-c-cpp/
