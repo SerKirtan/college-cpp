@@ -1,0 +1,3 @@
+6. Explain pointer to objects with example.
+
+Ans - > https://www.demo2s.com/cpp/cpp-pointers-to-objects.html
