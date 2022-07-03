@@ -1,16 +1,16 @@
 //Ascii to int and Ascii to float
 #include<iostream>
 using namespace std;
-float convert(char a)
+float convert(char a , float x)
 {
     return (float)a;
 }
-int convert(int a)
+int convert(char a)
 {
-    return a;
+    return (int)a;
 }
 int main()
 {   
-    cout<<convert('a')<<endl;
-    cout<<convert('-');
+    cout<<convert('1' , 1.1)<<endl;
+    cout<<convert('2');
 }
