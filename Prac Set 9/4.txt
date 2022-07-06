@@ -1,3 +1,0 @@
-4. Define and Discuss Pure Virtual Function
-
-Ans - > https://www.careerride.com/C++-what-are-pure-virtual-functions.aspx#:~:text=%2D%20Pure%20virtual%20function%20is%20the,function%20in%20the%20base%20class.
